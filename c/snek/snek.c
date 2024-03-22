@@ -8,7 +8,8 @@
 #define SCREEN_HEIGHT 900
 #define CELL_SIZE 20
 
-/* Needs at least 70MB free RAM.
+/* 
+ * Needs at least 90MB free RAM at 1600x900 & cell size 20, will vary depending on size (the snake length array is a bunch of it).
  * Also needs a graphical display, obviously for sdl2.
  * Written on Linux (I use Arch btw).
  */
@@ -37,15 +38,15 @@ void drawCell(SDL_Renderer *renderer, int x, int y, char color, char cellDirecti
 void drawGrid(SDL_Renderer *renderer);
 void generateFood();
 bool checkCollision(int x, int y);
-void update();
+void update(SDL_Renderer *renderer);
 void handleInput(SDL_Event *event);
 
 // Global variables
 Direction direction[3];
-SnakeCell snake[10000]; // Max size of the snake
+SnakeCell snake[SCREEN_HEIGHT*SCREEN_WIDTH/CELL_SIZE]; // Max size of the snake
 Cell food;
 bool expandHeld = false;
-int snakeLength = 3; // Initial length of the snake
+int snakeLength = SCREEN_HEIGHT*SCREEN_WIDTH/CELL_SIZE; // Initial length of the snake
 
 int main() {
   SDL_Window *window = NULL;
@@ -86,10 +87,12 @@ int main() {
   // Generate initial food position
   generateFood();
   
+  printf("Snake will use up to %luKiB of RAM\n", sizeof(snake)/1024);
+
   // Main loop
   while (running) {
     // Update the game
-    update();
+    update(renderer);
     
     // Clear the screen
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
@@ -177,26 +180,24 @@ void drawCell(SDL_Renderer *renderer, int x, int y, char color, char cellDirecti
       cellDirection = HORIZONTAL;
   }
   
+  int snakeWidth = CELL_SIZE/5; // Though this is called snake width, it's actually the amount removed from the snake
   if (cellDirection == HORIZONTAL) { // Draw the snake as horizontal
-    SDL_Rect cellRect = { x * CELL_SIZE, y * CELL_SIZE + 4, CELL_SIZE, CELL_SIZE - 8};
+    SDL_Rect cellRect = { x * CELL_SIZE, y * CELL_SIZE + snakeWidth, CELL_SIZE, CELL_SIZE - (snakeWidth*2)};
   } else if (cellDirection == VERTICAL) { // Draw the snake as vertical
-    SDL_Rect cellRect = { x * CELL_SIZE + 4, y * CELL_SIZE, CELL_SIZE - 8, CELL_SIZE};
+    SDL_Rect cellRect = { x * CELL_SIZE + snakeWidth, y * CELL_SIZE, CELL_SIZE - (snakeWidth*2), CELL_SIZE};
   } else if (cellDirection == UPLEFT) {
-    SDL_Rect cellRect = { x * CELL_SIZE + 4, y * CELL_SIZE - 4, CELL_SIZE - 8, CELL_SIZE};
-    SDL_Rect secCellRect = { x * CELL_SIZE - 4, y * CELL_SIZE + 4, CELL_SIZE, CELL_SIZE - 8};
+    SDL_Rect cellRect = { x * CELL_SIZE + snakeWidth, y * CELL_SIZE - snakeWidth, CELL_SIZE - (snakeWidth*2), CELL_SIZE};
+    SDL_Rect secCellRect = { x * CELL_SIZE - snakeWidth, y * CELL_SIZE + snakeWidth, CELL_SIZE, CELL_SIZE - (snakeWidth*2)};
   } else if (cellDirection == DOWNLEFT) {
-    SDL_Rect cellRect = { x * CELL_SIZE + 4, y * CELL_SIZE + 4, CELL_SIZE - 8, CELL_SIZE};
-    SDL_Rect secCellRect = { x * CELL_SIZE - 4, y * CELL_SIZE + 4, CELL_SIZE, CELL_SIZE - 8};
+    SDL_Rect cellRect = { x * CELL_SIZE + snakeWidth, y * CELL_SIZE + snakeWidth, CELL_SIZE - (snakeWidth*2), CELL_SIZE};
+    SDL_Rect secCellRect = { x * CELL_SIZE - snakeWidth, y * CELL_SIZE + snakeWidth, CELL_SIZE, CELL_SIZE - (snakeWidth*2)};
   } else if (cellDirection == DOWNRIGHT) {
-    SDL_Rect cellRect = { x * CELL_SIZE + 4, y * CELL_SIZE + 4, CELL_SIZE - 8, CELL_SIZE};
-    SDL_Rect secCellRect = { x * CELL_SIZE + 4, y * CELL_SIZE + 4, CELL_SIZE, CELL_SIZE - 8};
+    SDL_Rect cellRect = { x * CELL_SIZE + snakeWidth, y * CELL_SIZE + snakeWidth, CELL_SIZE - (snakeWidth*2), CELL_SIZE};
+    SDL_Rect secCellRect = { x * CELL_SIZE + snakeWidth, y * CELL_SIZE + snakeWidth, CELL_SIZE, CELL_SIZE - (snakeWidth*2)};
   } else if (cellDirection == UPRIGHT) {
-    SDL_Rect cellRect = { x * CELL_SIZE + 4, y * CELL_SIZE - 4, CELL_SIZE - 8, CELL_SIZE};
-    SDL_Rect secCellRect = { x * CELL_SIZE + 4, y * CELL_SIZE + 4, CELL_SIZE, CELL_SIZE - 8};
+    SDL_Rect cellRect = { x * CELL_SIZE + snakeWidth, y * CELL_SIZE - snakeWidth, CELL_SIZE - (snakeWidth*2), CELL_SIZE};
+    SDL_Rect secCellRect = { x * CELL_SIZE + snakeWidth, y * CELL_SIZE + snakeWidth, CELL_SIZE, CELL_SIZE - (snakeWidth*2)};
   } else if (cellDirection == NONE) {
-    //const Sint16 vx[] = {x * CELL_SIZE, x * CELL_SIZE+50, x * CELL_SIZE};
-    //const Sint16 vy[] = {y * CELL_SIZE, y * CELL_SIZE, y * CELL_SIZE + 50};
-    //SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
     SDL_Rect cellRect = { x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE };
     SDL_Rect secCellRect = { x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE };
   }
@@ -240,7 +241,7 @@ bool checkCollision(int x, int y) {
 }
 
 // Update the game state
-void update() {
+void update(SDL_Renderer *renderer) {
     // Move the snake
     for (int i = snakeLength - 1; i > 0; i--) {
       snake[i].x = snake[i - 1].x;
@@ -280,6 +281,18 @@ void update() {
     
     // Check for collisions
     if (checkCollision(snake[0].x, snake[0].y)) {
+      for (int i = 0; i < 255; i+=5) {
+        drawCell(renderer, food.x, food.y, 'r', NONE, NONE);
+        drawCell(renderer, snake[0].x, snake[0].y, 'g', NONE, NONE);
+        for (int i = 1; i < snakeLength; i++) {
+          drawCell(renderer, snake[i].x, snake[i].y, 'g', snake[i].direction, snake[i-1].direction);
+        }
+        SDL_SetRenderDrawColor(renderer, i, 0, 0, 255);
+        SDL_RenderPresent(renderer);
+        SDL_Delay(20);
+        SDL_RenderClear(renderer);
+      }
+      
       printf("Game Over!\n");
       printf("Score: %i \n", snakeLength-3); // -3 Because then it counts how much food obtained, not just the length (change this if you change the starting length)
       SDL_Delay(2000); // Wait for 2 seconds before exiting
