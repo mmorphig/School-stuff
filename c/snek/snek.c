@@ -46,7 +46,7 @@ Direction direction[3];
 SnakeCell snake[SCREEN_HEIGHT*SCREEN_WIDTH/CELL_SIZE]; // Max size of the snake
 Cell food;
 bool expandHeld = false;
-int snakeLength = SCREEN_HEIGHT*SCREEN_WIDTH/CELL_SIZE; // Initial length of the snake
+int snakeLength = 100; // Initial length of the snake
 
 int main() {
   SDL_Window *window = NULL;
@@ -218,20 +218,6 @@ void generateFood() {
 
 // Check if there's a collision at position (x, y)
 bool checkCollision(int x, int y) {
-  if (x < 0 || x >= SCREEN_WIDTH / CELL_SIZE || y < 0 || y >= SCREEN_HEIGHT / CELL_SIZE) {
-    // Warping to the other side 
-    if (x<0){ // Horizontally
-      snake[0].x = snake[0].x + (SCREEN_WIDTH / CELL_SIZE);
-    } else if (x>(SCREEN_WIDTH / CELL_SIZE - 1)){
-      snake[0].x = snake[0].x - (SCREEN_WIDTH / CELL_SIZE);
-    }
-    if (y<0){ // Vertically
-      snake[0].y = snake[0].y + (SCREEN_HEIGHT / CELL_SIZE);
-    } else if (y>(SCREEN_HEIGHT / CELL_SIZE - 1)){
-      snake[0].y = snake[0].y - (SCREEN_HEIGHT / CELL_SIZE);
-    }
-    //return true; // Hit the wall
-  }
   for (int i = 1; i < snakeLength; i++) {
     if (snake[i].x == x && snake[i].y == y) {
       return true; // Hit the snake itself
@@ -269,6 +255,20 @@ void update(SDL_Renderer *renderer) {
         break;
     }
     
+    if (snake[0].x < 0 || snake[0].x >= SCREEN_WIDTH / CELL_SIZE || snake[0].y < 0 || snake[0].y >= SCREEN_HEIGHT / CELL_SIZE) {
+      // Warping to the other side 
+      if (snake[0].x<0){ // Horizontally
+        snake[0].x = snake[0].x + (SCREEN_WIDTH / CELL_SIZE);
+      } else if (snake[0].x>(SCREEN_WIDTH / CELL_SIZE - 1)){
+        snake[0].x = snake[0].x - (SCREEN_WIDTH / CELL_SIZE);
+      }
+      if (snake[0].y<0){ // Vertically
+        snake[0].y = snake[0].y + (SCREEN_HEIGHT / CELL_SIZE);
+      } else if (snake[0].y>(SCREEN_HEIGHT / CELL_SIZE - 1)){
+        snake[0].y = snake[0].y - (SCREEN_HEIGHT / CELL_SIZE);
+      }
+    }
+  
     // Remove previous input from queue and put next input
     if (direction[2] != NO) {
       direction[0] = direction[1];
