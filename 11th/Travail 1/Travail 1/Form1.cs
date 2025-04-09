@@ -30,7 +30,7 @@ namespace Travail_1
                 int age;
                 if (int.TryParse(txtAge.Text, out age))
                 {
-                    lblAffiche.Text = txtNom.Text + ", " + txtPrenom.Text + "\n" + txtSport.Text + " " + age.ToString();
+                    lblAffiche.Text = txtNom.Text + ", " + txtPrenom.Text + "\n" + "tu as: " + age.ToString() + "ans et ton sport est: " + txtSport.Text;
 
                 }
                 else
