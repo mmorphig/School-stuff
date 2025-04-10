@@ -77,52 +77,29 @@ namespace Travail_2
             jeuxRestant = 25;
             tirage = Rd.Next(1, 5);
         }
-
-        private void picHautGauche_Click(object sender, EventArgs e)
+        public void picClick(object sender, EventArgs e)
         {
-            if (!(tirage == 1))
+            // Enlève l'image de les pictureBox
+            foreach (Control c in Controls)
             {
-                perdu();
+                if (c is PictureBox)
+                {
+                    ((PictureBox)c).Image = null;
+                }
             }
-            else
-            {
-                gagne(sender);
-            }
-        }
-
-        private void picHautDroit_Click(object sender, EventArgs e)
-        {
-            if (!(tirage == 2))
-            {
-                perdu();
-            }
-            else
-            {
-                gagne(sender);
-            }
-        }
-
-        private void picBasGauche_Click(object sender, EventArgs e)
-        {
-            if (!(tirage == 3))
-            {
-                perdu();
-            }
-            else
-            {
-                gagne(sender);
-            }
-        }
-
-        private void picBasDroite_Click(object sender, EventArgs e)
-        {
-            if (!(tirage == 4))
-            {
-                perdu();
-            }
-            else
-            {
-                gagne(sender);
+            switch (((PictureBox)sender).Name) {
+                case "picHautGauche":
+                    if (tirage != 1) { perdu(); } else { gagne(sender); }
+                    break;
+                case "picHautDroit":
+                    if (tirage != 2) { perdu(); } else { gagne(sender); }
+                    break;
+                case "picBasGauche":
+                    if (tirage != 3) { perdu(); } else { gagne(sender); }
+                    break;
+                case "picBasDroite":
+                    if (tirage != 4) { perdu(); } else { gagne(sender); }
+                    break;
             }
         }
     }

@@ -95,7 +95,7 @@
             this.picHautGauche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picHautGauche.TabIndex = 4;
             this.picHautGauche.TabStop = false;
-            this.picHautGauche.Click += new System.EventHandler(this.picHautGauche_Click);
+            this.picHautGauche.Click += new System.EventHandler(this.picClick);
             // 
             // picHautDroit
             // 
@@ -106,7 +106,7 @@
             this.picHautDroit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picHautDroit.TabIndex = 5;
             this.picHautDroit.TabStop = false;
-            this.picHautDroit.Click += new System.EventHandler(this.picHautDroit_Click);
+            this.picHautDroit.Click += new System.EventHandler(this.picClick);
             // 
             // picBasGauche
             // 
@@ -117,7 +117,7 @@
             this.picBasGauche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBasGauche.TabIndex = 6;
             this.picBasGauche.TabStop = false;
-            this.picBasGauche.Click += new System.EventHandler(this.picBasGauche_Click);
+            this.picBasGauche.Click += new System.EventHandler(this.picClick);
             // 
             // picBasDroite
             // 
@@ -128,7 +128,7 @@
             this.picBasDroite.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBasDroite.TabIndex = 7;
             this.picBasDroite.TabStop = false;
-            this.picBasDroite.Click += new System.EventHandler(this.picBasDroite_Click);
+            this.picBasDroite.Click += new System.EventHandler(this.picClick);
             // 
             // btnGenere
             // 
