@@ -22,7 +22,6 @@ namespace Travail_2
         
         public void perdu()
         {
-            jeuxRestant--;
             switch (tirage) {
                 case 1:
                     picHautGauche.Image = Properties.Resources.mario;
@@ -41,7 +40,6 @@ namespace Travail_2
 
         public void gagne(object sender)
         {
-            jeuxRestant--;
             points++;
             lblPoints.Text = points.ToString();
             ((PictureBox)sender).Image = Properties.Resources.mario;
@@ -58,6 +56,7 @@ namespace Travail_2
                 }
             }
 
+            jeuxRestant--;
             lblJeux.Text = jeuxRestant.ToString();
             
             // Vérifie si le joueur a encore des jeux restants
