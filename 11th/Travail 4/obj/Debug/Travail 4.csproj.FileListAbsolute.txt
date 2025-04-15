@@ -1,0 +1,10 @@
+C:\Users\mmorphig\source\repos\School-stuff\11th\Travail 4\bin\Debug\Travail 4.exe.config
+C:\Users\mmorphig\source\repos\School-stuff\11th\Travail 4\bin\Debug\Travail 4.exe
+C:\Users\mmorphig\source\repos\School-stuff\11th\Travail 4\bin\Debug\Travail 4.pdb
+C:\Users\mmorphig\source\repos\School-stuff\11th\Travail 4\obj\Debug\Travail 4.csproj.AssemblyReference.cache
+C:\Users\mmorphig\source\repos\School-stuff\11th\Travail 4\obj\Debug\Travail_4.Form1.resources
+C:\Users\mmorphig\source\repos\School-stuff\11th\Travail 4\obj\Debug\Travail_4.Properties.Resources.resources
+C:\Users\mmorphig\source\repos\School-stuff\11th\Travail 4\obj\Debug\Travail 4.csproj.GenerateResource.cache
+C:\Users\mmorphig\source\repos\School-stuff\11th\Travail 4\obj\Debug\Travail 4.csproj.CoreCompileInputs.cache
+C:\Users\mmorphig\source\repos\School-stuff\11th\Travail 4\obj\Debug\Travail 4.exe
+C:\Users\mmorphig\source\repos\School-stuff\11th\Travail 4\obj\Debug\Travail 4.pdb
