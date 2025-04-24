@@ -86,7 +86,7 @@
             // 
             // tmrAnimation
             // 
-            this.tmrAnimation.Interval = 50;
+            this.tmrAnimation.Interval = 33;
             this.tmrAnimation.Tick += new System.EventHandler(this.tmrAnimation_Tick);
             // 
             // picCoupe

@@ -47,7 +47,7 @@ namespace Travail_4
 
         public bool testAtteintFin(PictureBox sender) {
             // vérifie si l'image est arrivée à la fin de la piste
-            if (sender.Location.X >= 1040)
+            if (sender.Location.X >= picCoupe.Right - picCoupe.Width/2)
             {
                 tmrAnimation.Stop();
                 //MessageBox.Show("Le gagnant est " + sender.Name);
@@ -74,6 +74,7 @@ namespace Travail_4
             // vitesse aléatoire entre 1 et 3
             vitesseFemme = rd.Next(1, 3); 
             vitesseHomme = rd.Next(1, 3);
+            picFeux.Image = Travail_4.Properties.Resources.images_rouge; // remet le feu à rouge
             tmrFeux.Start(); // commence l'animation des feux, elle commence l'animation au fin
         }
 
@@ -135,7 +136,7 @@ namespace Travail_4
                 picFemme.Image = listeFemme[stageFemme++];
                 if (stageFemme == 3) { stageFemme = 0; } // reset stageFemme 
                 // Bouge picFemme
-                picFemme.Location = new Point((rd.Next(4, 16) * vitesseFemme) + picFemme.Location.X, picFemme.Location.Y);
+                picFemme.Location = new Point((rd.Next(3, 12) * vitesseFemme) + picFemme.Location.X, picFemme.Location.Y);
                 testAtteintFin(picFemme);
                 animation = false;
             }
@@ -144,7 +145,7 @@ namespace Travail_4
                 picHomme.Image = listeHomme[stageHomme++];
                 if (stageHomme == 3) { stageHomme = 0; } // reset stageHomme 
                 // Bouge picHomme
-                picHomme.Location = new Point((rd.Next(4, 16) * vitesseHomme) + picHomme.Location.X, picHomme.Location.Y);
+                picHomme.Location = new Point((rd.Next(3, 12) * vitesseHomme) + picHomme.Location.X, picHomme.Location.Y);
                 testAtteintFin(picHomme);
                 animation = true;
             }
