@@ -1,0 +1,11 @@
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Debug\Travail 2.exe.config
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Debug\Travail 2.exe
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Debug\Travail 2.pdb
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Debug\Travail 2.csproj.AssemblyReference.cache
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Debug\Travail_2.Form1.resources
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Debug\Travail_2.Properties.Resources.resources
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Debug\Travail 2.csproj.GenerateResource.cache
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Debug\Travail 2.csproj.CoreCompileInputs.cache
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Debug\Travail 2.exe
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Debug\Travail 2.pdb
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Debug\Travail 2.exe.config
