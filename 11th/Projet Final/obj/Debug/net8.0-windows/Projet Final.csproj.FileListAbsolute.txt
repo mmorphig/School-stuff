@@ -1,0 +1,21 @@
+E:\Programming\school\School-stuff\11th\Projet Final\bin\Debug\net8.0-windows\Projet Final.exe
+E:\Programming\school\School-stuff\11th\Projet Final\bin\Debug\net8.0-windows\Projet Final.deps.json
+E:\Programming\school\School-stuff\11th\Projet Final\bin\Debug\net8.0-windows\Projet Final.runtimeconfig.json
+E:\Programming\school\School-stuff\11th\Projet Final\bin\Debug\net8.0-windows\Projet Final.dll
+E:\Programming\school\School-stuff\11th\Projet Final\bin\Debug\net8.0-windows\Projet Final.pdb
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\Projet_Final.Form1.resources
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\Projet Final.csproj.GenerateResource.cache
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\Projet Final.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\Projet Final.AssemblyInfoInputs.cache
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\Projet Final.AssemblyInfo.cs
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\Projet Final.csproj.CoreCompileInputs.cache
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\Projet Final.sourcelink.json
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\Projet Final.dll
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\refint\Projet Final.dll
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\Projet Final.pdb
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\Projet Final.genruntimeconfig.cache
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\ref\Projet Final.dll
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\Projet_Final.Properties.Resources.resources
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\Projet_Final.Form2.resources
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\Projet_Final.Form3.resources
+E:\Programming\school\School-stuff\11th\Projet Final\obj\Debug\net8.0-windows\Projet_Final.Form4.resources
