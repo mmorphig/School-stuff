@@ -49,7 +49,7 @@ namespace Travail_2
 
         public void Afficher(Etudiant[] etudiantsAAfficher)
         {
-            listView1.Items.Clear();
+            listView1.Items.Clear(); // Clear est inutile ici, mais utile dans une situation reelle
             foreach (Etudiant etudiant in etudiantsAAfficher)
             {
                 listView1.Items.Add(new ListViewItem(new[] {
