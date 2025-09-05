@@ -35,6 +35,10 @@ namespace Travail_2
                 this.dateEnregistement = dateEnregistement;
             }
         }
+        public Form1()
+        {
+            InitializeComponent();
+        }
 
         public Etudiant[] Telecharger() 
         {
@@ -59,11 +63,6 @@ namespace Travail_2
                     etudiant.dateEnregistement.ToShortDateString() 
                 }));
             }
-        }
-
-        public Form1()
-        {
-            InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)

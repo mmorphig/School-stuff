@@ -66,7 +66,7 @@ namespace Travail_3
                         for (int j = 0; j < 4; j++)
                         {
                             int idx = i * 4 + j;
-                            infos2D[i][j] = idx < infos.Length ? infos[idx] : ""; // Si la linge n'existe pas, ne l'accède pas
+                            infos2D[i][j] = idx < infos.Length ? infos[idx] : ""; // Si la ligne n'existe pas, ne l'accède pas
                         }
                     }
                 }
