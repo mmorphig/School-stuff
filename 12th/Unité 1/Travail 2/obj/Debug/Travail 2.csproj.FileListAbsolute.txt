@@ -9,3 +9,12 @@ Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Debug\Travail 2.c
 Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Debug\Travail 2.exe
 Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Debug\Travail 2.pdb
 Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Debug\Travail 2.exe.config
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Debug\Mono.Cecil.dll
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Debug\Mono.Cecil.Mdb.dll
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Debug\Mono.Cecil.Pdb.dll
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Debug\Mono.Cecil.Rocks.dll
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Debug\Mono.Cecil.pdb
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Debug\Mono.Cecil.Mdb.pdb
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Debug\Mono.Cecil.Pdb.pdb
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Debug\Mono.Cecil.Rocks.pdb
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Debug\Travail 2.csproj.Up2Date

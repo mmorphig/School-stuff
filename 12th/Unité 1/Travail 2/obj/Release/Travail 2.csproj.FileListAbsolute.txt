@@ -1,0 +1,19 @@
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Release\Travail 2.exe.config
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Release\Travail 2.exe
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Release\Travail 2.pdb
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Release\Mono.Cecil.dll
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Release\Mono.Cecil.Mdb.dll
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Release\Mono.Cecil.Pdb.dll
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Release\Mono.Cecil.Rocks.dll
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Release\Mono.Cecil.pdb
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Release\Mono.Cecil.Mdb.pdb
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Release\Mono.Cecil.Pdb.pdb
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\bin\Release\Mono.Cecil.Rocks.pdb
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Release\Travail 2.csproj.AssemblyReference.cache
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Release\Travail_2.Form1.resources
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Release\Travail_2.Properties.Resources.resources
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Release\Travail 2.csproj.GenerateResource.cache
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Release\Travail 2.csproj.CoreCompileInputs.cache
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Release\Travail 2.csproj.Up2Date
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Release\Travail 2.exe
+Z:\Programming\school\School-stuff\12th\Unité 1\Travail 2\obj\Release\Travail 2.pdb

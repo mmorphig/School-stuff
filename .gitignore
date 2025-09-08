@@ -23,7 +23,8 @@
 *.lo
 
 # Shared objects (inc. Windows DLLs)
-*.dll
+#*.dll # keep dlls in because some stuff need the libraries
+*.cs.dll
 *.so
 *.so.*
 *.dylib
@@ -60,3 +61,5 @@ dkms.conf
 
 # Temporary files
 *.TMP
+
+net8.0-windows/

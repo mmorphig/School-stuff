@@ -32,6 +32,7 @@ namespace Travail_3
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Ajoute les colonnes au ListView par le codage, comme demandé
             listView1.Columns.Add(listView1.Columns.Count.ToString(), "Nom", 75);
             listView1.Columns.Add(listView1.Columns.Count.ToString(), "Prénom", 85);
             listView1.Columns.Add(listView1.Columns.Count.ToString(), "Date de naissance", 150);
@@ -54,14 +55,17 @@ namespace Travail_3
 
             if (dialog.FileName != "")
             {
+                // Pourrait utiliser seulement StreamReader, mais FileStream accepte d'autres arguments
                 FileStream fichier = new FileStream(dialog.FileName, FileMode.Open, FileAccess.Read, FileShare.None);
                 StreamReader streamFichier = new StreamReader(fichier);
                 infos = streamFichier.ReadToEnd().Split('\n'); // Utile en version 1D et 2D
                 #region version2D
                 {
+                    // Loop par chaque rangée du tableau 2D
                     infos2D = new string[infos.Length][];
                     for (int i = 0; i < infos.Length; i++)
                     {
+                        // Par chaque colonne du tableau 2D
                         infos2D[i] = new string[4];
                         for (int j = 0; j < 4; j++)
                         {
@@ -71,6 +75,7 @@ namespace Travail_3
                     }
                 }
                 #endregion version2D
+                // Fermeture des streams si ils existent
                 streamFichier?.Close();
                 fichier?.Close();
             }
@@ -79,8 +84,9 @@ namespace Travail_3
         private void btnAfficher_Click(object sender, EventArgs e)
         {
             if (infos == null) return;
+            listView1.Items.Clear(); // Vide le ListView avant d'ajouter des items, utile ici
             /*
-            #region tableau1D
+            #region version1D
             {
                 for (int i = 0; i < infos.Length; i += 4) // Loop par le nombre d'infos, 4 par personne
                 {
@@ -92,7 +98,7 @@ namespace Travail_3
                         }));
                 }
             }
-            #endregion tableau1D
+            #endregion version1D
             */
             #region version2D
             {

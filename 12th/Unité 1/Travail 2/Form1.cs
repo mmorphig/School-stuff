@@ -17,17 +17,21 @@ namespace Travail_2
         public class Etudiant
         {
             public string nom;
-            public uint age;
+            // Utilise byte, qui limite les ages a 0-255
+            public byte age;
+            // Utilise DateTime pour les dates pour être plus flexible
             public DateTime dateNaissance;
             public DateTime dateEnregistement;
-            public Etudiant(string nom, uint age, DateTime dateNaissance)
+            // 2 Constructeurs, un avec dateEnregistement par defaut a aujourd'hui pour le premier
+            public Etudiant(string nom, byte age, DateTime dateNaissance)
             {
                 this.nom = nom;
+                // Pourrait faire un XOR ((byte)(age ^ 0b10000000)) pour un clamp entre 0-127 mais quelques personnes vivent longtemps maintenenant
                 this.age = age;
                 this.dateNaissance = dateNaissance;
                 this.dateEnregistement = DateTime.Now;
             }
-            public Etudiant(string nom, uint age, DateTime dateNaissance, DateTime dateEnregistement)
+            public Etudiant(string nom, byte age, DateTime dateNaissance, DateTime dateEnregistement)
             {
                 this.nom = nom;
                 this.age = age;
@@ -35,6 +39,7 @@ namespace Travail_2
                 this.dateEnregistement = dateEnregistement;
             }
         }
+
         public Form1()
         {
             InitializeComponent();
@@ -42,13 +47,12 @@ namespace Travail_2
 
         public Etudiant[] Telecharger() 
         {
-            Etudiant[] etudiantsTelecharge = new Etudiant[] {
+            return new Etudiant[] {
                 new Etudiant("Jean Smithson", 21, new DateTime(1997, 12, 1), new DateTime(2021, 3, 10)),
                 new Etudiant("Nima Abdo", 17, new DateTime(2001, 5, 23), new DateTime(2021, 7, 25)),
                 new Etudiant("Simon Malheureux", 18, new DateTime(2000, 11, 15), new DateTime(2021, 5, 16)),
                 new Etudiant("Rita Mou", 17, new DateTime(2001, 8, 30), new DateTime(2021, 10, 25))
             };
-            return etudiantsTelecharge;
         }
 
         public void Afficher(Etudiant[] etudiantsAAfficher)
@@ -57,17 +61,17 @@ namespace Travail_2
             foreach (Etudiant etudiant in etudiantsAAfficher)
             {
                 listView1.Items.Add(new ListViewItem(new[] {
-                    etudiant.nom, 
-                    etudiant.age.ToString(), 
-                    etudiant.dateNaissance.ToShortDateString(), 
-                    etudiant.dateEnregistement.ToShortDateString() 
+                    etudiant.nom,
+                    etudiant.age.ToString(),
+                    etudiant.dateNaissance.ToShortDateString(),
+                    etudiant.dateEnregistement.ToShortDateString()
                 }));
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB"); // pour avoir dd/mm/YYYY
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-GB"); // Pour avoir dd/mm/YYYY (même fr-CA ne donne pas la bonne)
             Etudiant[] etudiants = Telecharger();
             Afficher(etudiants);
         }
