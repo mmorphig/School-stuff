@@ -90,12 +90,7 @@ namespace Travail_3
             {
                 for (int i = 0; i < infos.Length; i += 4) // Loop par le nombre d'infos, 4 par personne
                 {
-                    listView1.Items.Add(new ListViewItem(new[] {
-                            infos[i],
-                            infos[i + 1],
-                            infos[i + 2],
-                            infos[i + 3]
-                        }));
+                    listView1.Items.Add(new ListViewItem(infos));
                 }
             }
             #endregion version1D
@@ -105,12 +100,7 @@ namespace Travail_3
                 if (infos2D == null) return;
                 for (int i = 0; i < infos.Length; i++)
                 {
-                    listView1.Items.Add(new ListViewItem(new[] {
-                        infos2D[i][0],
-                        infos2D[i][1],
-                        infos2D[i][2],
-                        infos2D[i][3]
-                    }));
+                    listView1.Items.Add(new ListViewItem(infos2D[i]));
                 }
             }
             #endregion version2D
