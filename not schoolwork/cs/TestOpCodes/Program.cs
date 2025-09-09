@@ -35,6 +35,8 @@ class Program
 
                 // Decompile the whole module into C# code
                 string code = decompiler.DecompileWholeModuleAsString();
+                
+                File.WriteAllText(outPath, code);
 
                 Console.WriteLine($"Decompiled code written to: {outPath}");
             }

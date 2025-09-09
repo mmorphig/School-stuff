@@ -62,4 +62,6 @@ dkms.conf
 # Temporary files
 *.TMP
 
+# Other things
+*_Decompiled.cs
 net8.0-windows/
